@@ -1,0 +1,12 @@
+.card {
+  margin: 20px;
+}
+
+.card.card-shadow {
+  box-shadow: 0 4px 3px 3px #333;
+}
+
+.card.card-rounded {
+  border-radius: 4px;
+  overflow: hidden;
+}
