@@ -3,6 +3,18 @@
   height: 300px;
 }
 
+.object-cover {
+  object-fit: cover;
+}
+
+.object-contain {
+  object-fit: contain;
+}
+
+.object-fill {
+  object-fit: fill;
+}
+
 .img.img-avatar {
   width: 60px;
   height: 60px;

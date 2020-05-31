@@ -1,23 +1,25 @@
 import React from 'react';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import './App.css';
 
-import ProfileCard from './components/ProfileCard/ProfileCard';
+import BaseLayout from './layouts/BaseLayout/BaseLayout';
+import HomePage from './pages/HomePage/HomePage';
+import FilmsPage from './pages/FilmsPage/FilmsPage';
 
 function App() {
   return (
-    <div className="container">
-      <h1>Application</h1>
+    <BrowserRouter>
 
-      <div className="grid">
-        <ProfileCard
-          title="My Profile"
-          text="I am 32 years old frontend developer from Turkey."
-          imgSrc="https://via.placeholder.com/600/24f355"
-          buttonText="Like me!"
-          onButtonClick={() => alert('I lıke you!')}
-        />
-      </div>
-    </div>
+      <BaseLayout>
+
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/films" component={FilmsPage}/>
+        </Switch>
+
+      </BaseLayout>
+      
+    </BrowserRouter>
   );
 }
 

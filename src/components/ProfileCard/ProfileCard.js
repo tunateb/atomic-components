@@ -6,15 +6,28 @@ import Button from '../Button/Button';
 import Text from '../Text/Text';
 import Image from '../Image/Image';
 
-const ProfileCard = ({ title, text, buttonText, onButtonClick, imgSrc, imgAlt }) => {
+const ProfileCard = ({ title, text, buttonText, onButtonClick, imgSrc, imgAlt, children }) => {
   return (
     <Card rounded shadow>
-      <Image src={imgSrc} alt={imgAlt} />
+      <div className="card-img">
+        <Image width="100%" fit="cover" src={imgSrc} alt={imgAlt} />
+      </div>
 
-      <Text>{title}</Text>
-      <Text>{text}</Text>
+      <div className="card-content">
+        {
+          title && text ? 
+          (
+            <>
+              <Text title>{title}</Text>
+              <Text>{text}</Text>
+            </>
+          ) : 
+          
+          children
+        }
+      </div>
 
-      <div>
+      <div className="card-actions">
         <Button onClick={onButtonClick} color="red">{buttonText}</Button>
       </div>
     </Card>
