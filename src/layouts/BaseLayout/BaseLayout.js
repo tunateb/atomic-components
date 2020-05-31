@@ -9,6 +9,8 @@ const BaseLayout = ({ children }) => (
     <nav>
       <Link to="/">Home</Link>
       <Link to="films">Films</Link>
+      <Link to="planets">Planets</Link>
+      <Link to="people">People</Link>
     </nav>
 
 
