@@ -29,8 +29,9 @@ class ListLayout extends Component {
               title={item[this.props.titleKey]}
               text={item[this.props.textKey]}
               imgSrc={`https://unsplash.it/300/30${index}`}
-              buttonText={`Like ${this.props.name}`}
+              linkText = 'Click for Details'
               onButtonClick={() => alert(`I like ${item[this.props.titleKey]}`)}
+              linkPath = "filmdetails"
             />
           ))
         }
