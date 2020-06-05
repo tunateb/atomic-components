@@ -27,3 +27,7 @@
 .img.img-circle {
   border-radius: 50%;
 }
+
+.img.img-hidden {
+  display: none;
+}

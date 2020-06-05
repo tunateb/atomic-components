@@ -31,7 +31,8 @@ class ListLayout extends Component {
               imgSrc={`https://unsplash.it/300/30${index}`}
               linkText = 'Click for Details'
               onButtonClick={() => alert(`I like ${item[this.props.titleKey]}`)}
-              linkPath = "filmdetails"
+              linkPath={this.props.linkPath}
+              hiddenCarousel
             />
           ))
         }

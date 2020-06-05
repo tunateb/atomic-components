@@ -4,6 +4,10 @@
   overflow: auto;
 }
 
+.card-content-hidden {
+  display: none;
+}
+
 .card-img {
   height: 300px;
   overflow: hidden;

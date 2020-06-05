@@ -28,3 +28,7 @@
   line-height: 24px;
   margin: 12px 10px;
 }
+
+.text.text-hidden {
+  display: none;
+}

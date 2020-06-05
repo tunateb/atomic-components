@@ -1,5 +1,6 @@
 import React from "react";
 import "./ProfileCard.css";
+import CarouselComp from "../CarouselComp/CarouselComp/CarouselComp";
 
 import Card from "../Card/Card";
 import BtnLink from "../BtnLink/BtnLink";
@@ -15,18 +16,32 @@ const ProfileCard = ({
   onClick,
   children,
   linkPath,
+  hiddenImg,
+  hiddenText,
+  hiddenCarousel,
+  
 }) => {
   return (
     <Card rounded shadow>
-      <div className="card-img">
-        <Image width="100%" fit="cover" src={imgSrc} alt={imgAlt} />
+      <div className={hiddenImg ? "card-img-hidden" : "card-img"}>
+        <Image
+          width="100%"
+          fit="cover"
+          src={imgSrc}
+          alt={imgAlt}
+          hiddenImg={hiddenImg}
+        />
       </div>
 
-      <div className="card-content">
+      <CarouselComp hiddenCarousel={hiddenCarousel} />
+
+      <div className={hiddenText ? "card-content-hidden" : "card-content"}>
         {title && text ? (
           <>
-            <Text title>{title}</Text>
-            <Text>{text}</Text>
+            <Text title hiddenText={hiddenText}>
+              {title}
+            </Text>
+            <Text hiddenText={hiddenText}>{text}</Text>
           </>
         ) : (
           children
@@ -34,7 +49,7 @@ const ProfileCard = ({
       </div>
 
       <div className="card-actions">
-        <BtnLink linkText={linkText} linkPath={linkPath}/>
+        <BtnLink linkText={linkText} linkPath={linkPath} />
       </div>
     </Card>
   );
